@@ -1,52 +1,68 @@
-# File_organizor
-📂 File Organizer
-A command-line Python script to automatically sort files in a directory into clean, categorized folders. Say goodbye to cluttered folders and find your files with ease.
+# 📂 File Organizer
 
-🤔 What It Does
-This script scans a directory of your choice and moves files into subfolders based on their extension. For example, all .png and .jpg files will be moved into an Images folder, and all .pdf and .docx files will go into a Documents folder.
+A command-line Python script to automatically sort files within a directory into organized, category-based folders.
 
-Any file type that isn't recognized will be safely placed in an Other folder.
+---
 
-✨ Key Features
-Smart Categorization: Sorts files into Images, Documents, Audio, Video, Archives, and Scripts.
+## 📖 Overview
 
-Safe to Run: The script only moves files. It will not delete anything. It also ignores any existing folders and the script file itself.
+This script scans a specified directory and moves each file into a subfolder corresponding to its file type. For example, all `.jpg` and `.png` files are moved into an `Images` folder, and `.pdf` and `.docx` files are moved into a `Documents` folder. This helps declutter folders like your "Downloads" or "Desktop" with a single command.
 
-User-Friendly: Just run the script and provide a folder path. No complex setup is needed.
+---
 
-Easy to Customize: You can easily add new file types or create new categories by editing the CATEGORIES dictionary directly in the script.
+## ✨ Key Features
 
-Cross-Platform: Works on Windows, macOS, and Linux without any changes.
+* **Automated Sorting**: Moves files into folders like `Images`, `Documents`, `Audio`, `Video`, etc.
+* **Smart Categorization**: Uses a dictionary of file extensions for easy and accurate sorting.
+* **"Other" Category**: Any file type not recognized is safely moved to an `Other` folder, ensuring no file is left behind.
+* **Safe Operation**: The script automatically ignores subdirectories and itself to prevent errors.
+* **User-Friendly**: Simply run the script and provide a directory path when prompted.
+* **Easy to Customize**: Add new file extensions or entire categories just by editing the `CATEGORIES` dictionary in the source code.
 
-🚀 Getting Started
-Save the Script: Make sure the script is saved as a Python file (e.g., organize_directory.py).
+---
 
-Open Terminal: Launch your terminal or command prompt.
+## 🚀 Getting Started
 
-Run the Script: Navigate to the directory where you saved the script and run it with the following command:
+### Prerequisites
 
-python organize_directory.py
+* **Python 3.x** must be installed on your system.
 
-Provide the Path: When prompted, paste or type the full path to the folder you want to organize and press Enter.
+### Instructions
 
-Enter the full path of the directory you want to organize: C:\Users\YourUser\Downloads
+1.  **Save the Script**: Save the code as a Python file (e.g., `organize_files.py`).
+2.  **Open Terminal**: Launch your terminal (Command Prompt on Windows, Terminal on macOS/Linux).
+3.  **Navigate to the Script's Location (Optional)**: If the script is not in the directory you want to organize, you can still run it by providing the full path.
+4.  **Run the Script**: Execute the following command:
+    ```bash
+    python organize_files.py
+    ```
+5.  **Provide the Path**: When prompted, type or paste the full path to the directory you want to clean up and press `Enter`.
+    ```
+    Enter the full path of the directory you want to organize: C:\Users\YourUser\Downloads
+    ```
+6.  **Watch the Magic**: The script will print the actions as it moves each file. Once finished, a "complete" message will be displayed.
 
-Watch the Magic: The script will report its progress as it moves each file and will notify you when the organization is complete.
+---
 
-🔧 How to Customize
-You can tailor the script to your needs by editing the CATEGORIES dictionary.
+## 🔧 Customization
 
-For instance, if you want to add .svg files to the Images category and create a new Fonts category, you would modify the dictionary as follows:
+To add new file types or categories, simply edit the `CATEGORIES` dictionary within the script file.
 
-CATEGORIES = {
-    "Images": [".jpg", ".jpeg", ".png", ".gif", ".heic", ".webp", ".bmp", ".svg"],  # .svg added
-    "Documents": [".pdf", ".docx", ".doc", ".xlsx", ".pptx", ".txt", ".csv", ".rtf"],
-    "Audio": [".mp3", ".wav", ".aac", ".m4a"],
-    "Video": [".mp4", ".mov", ".avi", ".mkv"],
-    "Archives": [".zip", ".rar", ".tar", ".gz"],
-    "Scripts": [".py", ".js", ".sh", ".bat", ".html", ".css"],
-    "Fonts": [".ttf", ".otf", ".woff"]  # New category for fonts
-}
+**Example**: To add support for `.svg` images and a new `Code` category for `.java` files:
 
-📄 License
-This script is freely available for use under the MIT License.
+```python
+# Original
+"Images": [".jpg", ".jpeg", ".png", ".gif", ".heic", ".webp", ".bmp"],
+"Scripts": [".py", ".js", ".sh", ".bat", ".html", ".css"],
+
+# Modified
+"Images": [".jpg", ".jpeg", ".png", ".gif", ".heic", ".webp", ".bmp", ".svg"],
+"Scripts": [".py", ".js", ".sh", ".bat", ".html", ".css"],
+"Code": [".java"] # New Category
+```
+
+---
+
+## 📄 License
+
+This script is released under the MIT License. See the `LICENSE` file for more details.
